@@ -15,4 +15,4 @@ jobs:
           # Workaround for docker-compose v1 ContainerConfig bug
           docker rm -f wgsoft-frontend wgsoft-backend || true
           cd /home/wigamu/wgsoft/infra
-          docker-compose up -d --build
+          docker compose up -d --build
