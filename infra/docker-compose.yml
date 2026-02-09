@@ -12,5 +12,28 @@ services:
     volumes:
       - wgsoft-db-data:/var/lib/postgresql/data
 
+  backend:
+    build: ../apps/backend
+    container_name: wgsoft-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://wgsoft:wgsoftpass@db:5432/wgsoft?schema=public
+    depends_on:
+      - db
+    ports:
+      - "127.0.0.1:3001:3000"
+
+  frontend:
+    build: ../apps/frontend
+    container_name: wgsoft-frontend
+    restart: unless-stopped
+    environment:
+      API_URL: http://backend:3000
+      NEXT_PUBLIC_API_URL: /api
+    depends_on:
+      - backend
+    ports:
+      - "127.0.0.1:3000:3000"
+
 volumes:
   wgsoft-db-data:
