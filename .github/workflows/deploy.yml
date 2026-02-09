@@ -8,14 +8,9 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_KEY }}
-          script: |
-            cd /home/wigamu/wgsoft
-            git pull
-            cd /home/wigamu/wgsoft/infra
-            docker-compose up -d --build
+      - name: Deploy locally on VPS
+        run: |
+          cd /home/wigamu/wgsoft
+          git pull
+          cd /home/wigamu/wgsoft/infra
+          docker-compose up -d --build
