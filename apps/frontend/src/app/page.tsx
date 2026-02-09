@@ -23,7 +23,8 @@ export default async function Home() {
 
         <header className="grid gap-10 rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-10 md:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-widest text-slate-400">Software House · Clase mundial</p>
+            <p className="text-xs uppercase tracking-widest text-slate-400">Software</p>
+	    
             <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
               Construimos productos digitales con estándares enterprise.
             </h1>
