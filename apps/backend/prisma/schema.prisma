@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Profile {
+  id          Int      @id @default(autoincrement())
+  name        String
+  title       String
+  location    String?
+  email       String?
+  linkedin    String?
+  summary     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  experiences Experience[]
+  education   Education[]
+  skills      Skill[]
+  certifications Certification[]
+}
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  company     String
+  role        String
+  location    String?
+  startDate   String
+  endDate     String?
+  description String?
+  profileId   Int
+  profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Education {
+  id          Int      @id @default(autoincrement())
+  institution String
+  degree      String
+  field       String?
+  startYear   String?
+  endYear     String?
+  profileId   Int
+  profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Skill {
+  id        Int      @id @default(autoincrement())
+  name      String
+  profileId Int
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Certification {
+  id        Int      @id @default(autoincrement())
+  name      String
+  profileId Int
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}

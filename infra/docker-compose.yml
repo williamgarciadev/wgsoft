@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: wgsoft-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wgsoft
+      POSTGRES_PASSWORD: wgsoftpass
+      POSTGRES_DB: wgsoft
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - wgsoft-db-data:/var/lib/postgresql/data
+
+volumes:
+  wgsoft-db-data:
