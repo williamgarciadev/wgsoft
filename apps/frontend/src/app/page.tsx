@@ -13,7 +13,12 @@ export default async function Home() {
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <nav className="flex items-center justify-between py-6">
-          <div className="text-lg font-semibold">WgSoft</div>
+          <div className="flex items-center gap-2 text-lg font-semibold">
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-400/20 text-cyan-300 ring-1 ring-cyan-400/40">
+              W
+            </span>
+            WgSoft
+          </div>
           <div className="flex gap-6 text-sm text-slate-300">
             <a href="#servicios" className="hover:text-white">Servicios</a>
             <a href="#experiencia" className="hover:text-white">Experiencia</a>
