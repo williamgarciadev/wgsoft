@@ -64,11 +64,11 @@ export default async function Home() {
             <h2 className="text-2xl font-semibold">Servicios clave</h2>
             <span className="text-xs text-slate-400">Procesos ágiles + QA + DevOps</span>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
             {highlights.map((h) => (
-              <div key={h.title} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
-                <h3 className="text-lg font-semibold">{h.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{h.desc}</p>
+              <div key={h.title} className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+                <h3 className="text-base font-semibold">{h.title}</h3>
+                <p className="mt-1 text-sm text-slate-300">{h.desc}</p>
               </div>
             ))}
           </div>
@@ -76,9 +76,9 @@ export default async function Home() {
 
         <section id="experiencia" className="mt-14">
           <h2 className="mb-6 text-2xl font-semibold">Experiencia</h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {profile.experiences?.map((exp: any) => (
-              <div key={exp.id} className="rounded-2xl border border-slate-800 bg-slate-900/30 p-5">
+              <div key={exp.id} className="rounded-xl border border-slate-800 bg-slate-900/30 p-4">
                 <div className="flex flex-wrap items-center justify-between">
                   <h3 className="text-lg font-semibold">{exp.role} · {exp.company}</h3>
                   <span className="text-sm text-slate-400">{exp.startDate} – {exp.endDate || 'Actual'}</span>
@@ -95,7 +95,7 @@ export default async function Home() {
             <h2 className="mb-4 text-2xl font-semibold">Educación</h2>
             <div className="space-y-3">
               {profile.education?.map((edu: any) => (
-                <div key={edu.id} className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4">
+                <div key={edu.id} className="rounded-xl border border-slate-800 bg-slate-900/30 p-3">
                   <h3 className="font-semibold">{edu.degree} · {edu.institution}</h3>
                   <p className="text-sm text-slate-400">{edu.field} · {edu.startYear} – {edu.endYear}</p>
                 </div>
@@ -123,7 +123,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="contacto" className="mt-16 rounded-2xl border border-slate-800 bg-slate-900/40 p-8">
+        <section id="contacto" className="mt-16 rounded-xl border border-slate-800 bg-slate-900/40 p-6">
           <h2 className="text-2xl font-semibold">Hablemos</h2>
           <p className="mt-2 text-slate-300">Cuéntanos tu idea y te proponemos una solución.</p>
           <div className="mt-4 flex flex-wrap gap-3">
